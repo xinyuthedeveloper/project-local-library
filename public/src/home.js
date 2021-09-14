@@ -17,12 +17,12 @@ function getMostCommonGenres(books) {
   }, {})
   const names = Object.keys(genreCount);
   const output = names.map((name) => ({name,count: genreCount[name]}));
-  return output.sort((a, b) => b.count - a.count).slice(0,5);
+  return output.sort((nameA, nameB) => nameB.count - nameA.count).slice(0,5);
 }
 
 function getMostPopularBooks(books) {
   const borrows = books.map(book => ({name: book.title, count: book.borrows.length}));
-  borrows.sort((a, b) => b.count - a.count);
+  borrows.sort((bookA, bookB) => bookB.count - bookA.count);
   return borrows.slice(0, 5);
 }
 
